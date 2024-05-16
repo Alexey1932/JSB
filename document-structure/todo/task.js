@@ -3,23 +3,19 @@ let btn = document.querySelector('#tasks__add');
 let list = document.querySelector('#tasks__list');
 
 function add() {
-	if (input.value !== '') {
+	if (input.value.trim() !== '') {
 		list.insertAdjacentHTML('afterBegin',
 			`<div class="task">
 			<div class= "task__title" >
 			${input.value}
 			</div>
 			<a href="#" class="task__remove">&times;</a>
-		</div > `)
+		</div > `);
+		input.value = '';
+	} else {
+		input.value = '';
 	}
 }
-
-input.addEventListener('keydown', function (e) {
-	if (e.key === 'Enter') {
-		add()
-		e.preventDefault();
-	}
-});
 
 btn.addEventListener('click', function (e) {
 	add()

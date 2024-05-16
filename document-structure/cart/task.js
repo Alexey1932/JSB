@@ -26,7 +26,7 @@ products.forEach(product => {
 			const cartProduct = cartProducts.querySelector(`.cart__product[data-id="${productId}"]`);
 			if (cartProduct) {
 				const cartProductQuantity = cartProduct.querySelector('.cart__product-count');
-				cartProductQuantity.textContent = quantity;
+				cartProductQuantity.textContent = parseInt(cartProductQuantity.textContent) + quantity;
 			} else {
 
 				const productImageSrc = this.querySelector('.product__image').src;
